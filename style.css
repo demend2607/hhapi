@@ -1,0 +1,92 @@
+html,
+body {
+    position: relative;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#vacancy-container {
+    padding-top: 100px;
+}
+
+
+.salary-info {
+    display: flex;
+}
+
+.vacancy-block-container {
+    padding: 60px;
+}
+
+.vacancy-block {
+    max-width: 350px;
+    min-height: 450px;
+    padding: 10px 10px 0px 15px;
+    margin: 5px 20px 20px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.vacancy-block a {
+    font-weight: bold;
+    color: grey;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vacancy-block a:hover {
+    color: teal;
+}
+
+.salary-info p:first-child {
+    margin-right: 4px;
+}
+
+.vacancy-items {
+    margin-bottom: 10px;
+}
+
+.vacancy-items h4 {
+    font-size: 18px;
+}
+
+.vacancy-salarys span{
+    border-radius: 4px;
+    background-color: #F1F4F9;
+    padding: 2px 8px;
+    float: right;
+}
+
+.swiper {
+    width: 100%;
+}
+.swiper-wrapper{
+    padding-bottom: 10px;
+}
+.swiper-slide {
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    height: unset !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    
+    object-fit: cover;
+}
+
+.swiper-pagination {
+    margin-top: 15px;
+}

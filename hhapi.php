@@ -1,17 +1,4 @@
 <?php
-// $url = file_get_contents(
-//   "https://api.hh.ru/vacancies?employer_id=3468159",
-//   0,
-//   stream_context_create([
-//     'http' => [
-//       'method' => 'GET',
-//       'header' =>
-//       'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36',
-//     ],
-//   ])
-// );
-
-// $data = json_decode($url, true);
 
 $curl = curl_init();
 
@@ -37,6 +24,7 @@ if ($httpCode === 200) {
 
 $count = 0;
 foreach ($data['items'] as $item) {
+  // vacancy count limit
   if ($count >= 5) {
     break;
   }
@@ -45,14 +33,16 @@ foreach ($data['items'] as $item) {
 
   <div class="vacancy-block swiper-slide">
     <h4><?php echo $item['name']; ?></h4>
-    <p class="vacancy-salarys"><?php if ((!$item['salary'])) {
-                                  echo "По договоренности" . "<span>" . $experience . "</span>";
-                                } else if ($item['salary']['from'] && !$item['salary']['to']) {
-                                  echo $item['salary']['from'] . ' ₽ ' . "<span>" . $experience . "</span>";
-                                } else {
-                                  echo $item['salary']['from'] . ' ₽' . " - " . $item['salary']['to'] . ' ₽' . "<span>" .  $experience . "</span>";
-                                }
-                                ?></p>
+    <p class="vacancy-salarys">
+      <?php if ((!$item['salary'])) {
+        echo "По договоренности" . "<span>" . $experience . "</span>";
+      } else if ($item['salary']['from'] && !$item['salary']['to']) {
+        echo $item['salary']['from'] . ' ₽ ' . "<span>" . $experience . "</span>";
+      } else {
+        echo $item['salary']['from'] . ' ₽' . " - " . $item['salary']['to'] . ' ₽' . "<span>" .  $experience . "</span>";
+      }
+      ?>
+    </p>
     <p><?php echo $item['address']['raw']; ?></p>
     <p><?php echo $item['snippet']['responsibility']; ?></p>
   </div>

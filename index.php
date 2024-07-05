@@ -20,6 +20,13 @@
     </div>
   </div>
 
+  <?//php
+
+  // $date = '25.03.2020 08:18:39';
+  // $formatted_date = date('d.m.Y', strtotime($date));
+  // echo $formatted_date;
+  //?>
+
 
 
 </body>
